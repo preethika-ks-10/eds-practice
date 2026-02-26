@@ -323,3 +323,15 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+img {
+  width: 300px;
+  height: 200px;
+}
+.ProseMirror-trailingBreak .button-container a {
+  background: #1473e6;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
