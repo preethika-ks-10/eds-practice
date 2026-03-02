@@ -1,37 +1,24 @@
-.product-table {
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: Arial, sans-serif;
-}
-
-.product-table table {
+.spreadsheet table {
   width: 100%;
   border-collapse: collapse;
-  background: #ffffff;
+  font-family: Arial, sans-serif;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   border-radius: 10px;
   overflow: hidden;
 }
 
-.product-table th {
+.spreadsheet th {
   background: #2b2b2b;
   color: #fff;
   text-align: left;
   padding: 14px;
-  font-size: 16px;
 }
 
-.product-table td {
+.spreadsheet td {
   padding: 12px 14px;
   border-bottom: 1px solid #eee;
-  font-size: 15px;
 }
 
-.product-table tr:hover {
+.spreadsheet tr:hover {
   background: #f5f7fa;
-  transition: 0.2s ease;
-}
-
-.product-table tbody tr:last-child td {
-  border-bottom: none;
 }
