@@ -1,7 +1,6 @@
 /*
  * Embed Block
  * Show videos and social posts directly on your page
- */
 
 const loadScript = (url, callback, type) => {
   const head = document.querySelector('head');
@@ -73,9 +72,7 @@ const loadEmbed = (block, link, autoplay) => {
     { match: ['twitter'], embed: embedTwitter },
   ];
 
-  const config = EMBEDS_CONFIG.find((e) =>
-    e.match.some((match) => link.includes(match)),
-  );
+  const config = EMBEDS_CONFIG.find((e) => e.match.some((match) => link.includes(match)));
 
   const url = new URL(link);
 
@@ -98,8 +95,7 @@ export default function decorate(block) {
   if (placeholder) {
     const wrapper = document.createElement('div');
     wrapper.className = 'embed-placeholder';
-    wrapper.innerHTML =
-      '<div class="embed-placeholder-play"><button type="button" title="Play"></button></div>';
+    wrapper.innerHTML = '<div class="embed-placeholder-play"><button type="button" title="Play"></button></div>';
     wrapper.prepend(placeholder);
     wrapper.addEventListener('click', () => loadEmbed(block, link, true));
     block.append(wrapper);
@@ -113,3 +109,4 @@ export default function decorate(block) {
     observer.observe(block);
   }
 }
+ */

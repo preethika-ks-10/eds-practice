@@ -323,10 +323,12 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
 img {
   width: 300px;
   height: 200px;
 }
+
 img[alt*="Search Icon Icons"] {
   width: 80px;
   height: auto;

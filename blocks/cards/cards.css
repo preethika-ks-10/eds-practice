@@ -12,7 +12,6 @@
   max-width: 100%;
   margin: 0;
   box-sizing: border-box;
-
   background: linear-gradient(
     135deg,
     #0a0f1c 0%,
@@ -21,8 +20,8 @@
   );
   border-radius: 28px;
   padding: 36px 32px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgb(255 255 255 / 8%);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 35%);
 }
 
 /* list layout */
@@ -30,7 +29,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -39,7 +37,7 @@
 
 /* heading */
 .cards-wrapper .cards.block ul > li:first-child {
-  color: #ffffff;
+  color: #fff;
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 18px;
@@ -55,35 +53,36 @@
   color: #f3f6ff;
   font-size: 18px;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgb(255 255 255 / 6%);
+  border: 1px solid rgb(255 255 255 / 12%);
   transition: all 0.25s ease;
 }
 
 .cards-wrapper .cards.block ul li a:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  background: rgb(255 255 255 / 12%);
+  color: #fff;
   transform: translateY(-1px);
 }
+
 .cards-wrapper {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
 /* plain text fallback */
-.cards-wrapper .cards.block ul > li:not(:first-child):not(:has(a)) {
+.cards-wrapper .cards.block ul > li:not(:first-child, :has(a)) {
   display: inline-block;
   padding: 14px 22px;
   border-radius: 20px;
   color: #f3f6ff;
   font-size: 18px;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgb(255 255 255 / 6%);
+  border: 1px solid rgb(255 255 255 / 12%);
 }
 
 /* mobile */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .cards-wrapper .cards.block {
     padding: 24px 18px;
     border-radius: 22px;
@@ -95,7 +94,7 @@
   }
 
   .cards-wrapper .cards.block ul li a,
-  .cards-wrapper .cards.block ul > li:not(:first-child):not(:has(a)) {
+  .cards-wrapper .cards.block ul > li:not(:first-child, :has(a)) {
     font-size: 16px;
     padding: 12px 18px;
     border-radius: 16px;

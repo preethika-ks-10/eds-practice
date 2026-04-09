@@ -27,7 +27,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgb(0 0 0 / 60%);
   color: #fff;
   border: none;
   padding: 10px 14px;

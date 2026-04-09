@@ -1,20 +1,20 @@
 export default function decorate(block) {
   const products = [
     {
-      product: "Photoshop",
-      category: "Image Editing",
-      description: "Photo editing software"
+      product: 'Photoshop',
+      category: 'Image Editing',
+      description: 'Photo editing software',
     },
     {
-      product: "Illustrator",
-      category: "Vector",
-      description: "Vector graphics tool"
+      product: 'Illustrator',
+      category: 'Vector',
+      description: 'Vector graphics tool',
     },
     {
-      product: "Premiere Pro",
-      category: "Video",
-      description: "Video editing tool"
-    }
+      product: 'Premiere Pro',
+      category: 'Video',
+      description: 'Video editing tool',
+    },
   ];
 
   const table = document.createElement('table');
