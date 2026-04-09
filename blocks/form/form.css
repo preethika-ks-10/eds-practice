@@ -1,50 +1,479 @@
-form {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
+/* FULL PAGE BACKGROUND */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0b1220, #111827 55%, #1f1633);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
 }
- 
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+
+main {
+  background: linear-gradient(135deg, #0b1220, #111827 55%, #1f1633);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
 }
- 
-form input,
-form textarea {
+
+main .section,
+main .section-wrapper {
+  background: transparent;
+}
+
+/* SAME OUTER WIDTH FOR BLOCK WRAPPERS */
+main .section > .default-content-wrapper,
+main .section > .form-container,
+main .section > div:has(.form.headings),
+.form.header {
+  max-width: 1500px;
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* RESET DEFAULT CONTENT WRAPPER WHEN IT CONTAINS FORM HEADINGS */
+main .section > .default-content-wrapper:has(.form.headings),
+main .section > div:has(.form.headings) {
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* FORM HEADINGS VARIATION */
+.form.headings {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  background: linear-gradient(135deg, #0b1220, #111827 55%, #1f1633);
+  padding: 40px 32px 24px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0;
+  border-radius: 28px 28px 0 0;
+  box-sizing: border-box;
 }
- 
-form textarea {
-  min-height: 100px;
+
+.form.headings h1,
+.form.headings h2,
+.form.headings h3 {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.form.headings p {
+  color: #a9b8d9;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* FORM OUTER CONTAINER */
+main .form-container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #0b1220, #111827 55%, #1f1633);
+  margin: 0 auto 28px;
+  padding: 0 32px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 0;
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* FORM LAYOUT */
+main .form {
+  width: 100%;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+main .form form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  margin: 0;
+}
+
+main .form .field-wrapper,
+main .form .form-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main .form label {
+  color: #dbeafe;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* INPUTS */
+main .form input,
+main .form textarea,
+main .form .form-select,
+main .form select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(3, 10, 24, 0.95);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  outline: none;
+}
+
+main .form input::placeholder,
+main .form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+main .form select,
+main .form .form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+main .form textarea {
+  min-height: 180px;
   resize: vertical;
 }
- 
-form button,
-form input[type="submit"] {
-  background-color: #2d6cdf;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 4px;
+
+main .form input:focus,
+main .form textarea:focus,
+main .form select:focus,
+main .form .form-select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+/* FULL-WIDTH SUBMIT BUTTON */
+main .form button,
+main .form input[type='submit'],
+main .form .form-submit {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0 0;
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 24px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #061018;
+  background: linear-gradient(90deg, #60a5fa 0%, #22c55e 100%);
+  text-align: center;
 }
- 
-form button:hover,
-form input[type="submit"]:hover {
-  background-color: #1b4fbf;
+
+main .form button:hover,
+main .form input[type='submit']:hover,
+main .form .form-submit:hover {
+  filter: brightness(1.05);
 }
- 
-.form-status {
-  margin-top: 10px;
-  font-weight: bold;
-  color: green;
+
+/* REMOVE THE WIDTH OVERRIDE THAT WAS CAUSING VISUAL CLIPPING */
+.form-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* HEADER STYLE */
+.form.header {
+  margin: 16px auto 28px;
+  background:
+    radial-gradient(
+      820px 480px at 20% 0%,
+      rgba(96, 165, 250, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      880px 520px at 85% 10%,
+      rgba(216, 109, 203, 0.16),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #0a0f1c,
+      #080d18 70%,
+      #070b14
+    );
+  border-radius: 28px;
+  padding: 48px 56px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.form.header h1,
+.form.header h2 {
+  color: #dbe7ff;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.form.header p {
+  color: #a9b8d9;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.form.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(96, 165, 250, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* FORM TITLE */
+.form-title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: -5px 0 24px -6px;
+}
+
+/* INFO TEXT */
+.form .form-info {
+  display: block;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: #8ea2c8 !important;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  margin-top: -4px !important;
+  margin-bottom: 18px !important;
+  margin-left: 2px !important;
+  padding: 0 !important;
+}
+
+/* CUSTOM SELECT */
+.form .select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form .form-select {
+  width: 100%;
+  padding: 16px 50px 16px 20px;
+  border-radius: 20px;
+  background: rgba(3, 10, 24, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.form .form-select.is-placeholder {
+  color: #ffffff;
+}
+
+.form .form-select:not(.is-placeholder) {
+  color: #bfc5cf;
+}
+
+.form .form-select:focus {
+  outline: none;
+}
+
+.form .select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form .select-arrow svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #dbe4ff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.form .form-select option {
+  background-color: #d3d3d3;
+  color: #4b5563;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+/* TABLET */
+@media (max-width: 1024px) {
+  main .section > .default-content-wrapper,
+  main .section > .form-container,
+  main .section > div:has(.form.headings),
+  .form.header {
+    width: 96%;
+  }
+
+  .form.headings {
+    padding: 32px 24px 20px;
+  }
+
+  main .form-container {
+    padding: 0 24px 32px;
+  }
+
+  .form.header {
+    padding: 40px 32px;
+  }
+
+  .form.headings h1,
+  .form.headings h2,
+  .form.headings h3,
+  .form.header h1,
+  .form.header h2 {
+    font-size: 44px;
+  }
+
+  .form.headings p,
+  .form.header p {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  main .section > .default-content-wrapper,
+  main .section > .form-container,
+  main .section > div:has(.form.headings),
+  .form.header {
+    width: 94%;
+  }
+
+  main .section > .default-content-wrapper:has(.form.headings),
+  main .section > div:has(.form.headings) {
+    margin-top: 24px;
+  }
+
+  .form.headings {
+    padding: 28px 16px 18px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  main .form-container {
+    padding: 0 16px 24px;
+    border-radius: 0 0 22px 22px;
+    margin-bottom: 24px;
+  }
+
+  .form.header {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .form.headings h1,
+  .form.headings h2,
+  .form.headings h3,
+  .form.header h1,
+  .form.header h2 {
+    font-size: 34px;
+  }
+
+  .form.headings p,
+  .form.header p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  main .form form {
+    gap: 18px;
+  }
+
+  main .form input,
+  main .form textarea,
+  main .form select,
+  main .form .form-select {
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+
+  .form .form-select {
+    padding-right: 44px;
+  }
+
+  main .form textarea {
+    min-height: 140px;
+  }
+
+  main .form button,
+  main .form input[type='submit'] {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .form.headings h1,
+  .form.headings h2,
+  .form.headings h3,
+  .form.header h1,
+  .form.header h2 {
+    font-size: 30px;
+  }
+
+  .form.headings p,
+  .form.header p {
+    font-size: 15px;
+  }
+
+  main .form-container {
+    padding: 0 14px 20px;
+  }
+
+  .form.headings {
+    padding: 24px 14px 16px;
+  }
+
+  .form.header {
+    padding: 24px 16px;
+  }
 }

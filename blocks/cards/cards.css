@@ -1,27 +1,103 @@
-.cards > ul {
+/* FULL WIDTH WRAPPER */
+.cards-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* full width cards block */
+.cards-wrapper .cards.block {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    135deg,
+    #0a0f1c 0%,
+    #0d1628 60%,
+    #161934 100%
+  );
+  border-radius: 28px;
+  padding: 36px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* list layout */
+.cards-wrapper .cards.block ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+/* heading */
+.cards-wrapper .cards.block ul > li:first-child {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  flex-basis: 100%;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+/* pill links */
+.cards-wrapper .cards.block ul li a {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #f3f6ff;
+  font-size: 18px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards-wrapper .cards.block ul li a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.cards-wrapper {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+/* plain text fallback */
+.cards-wrapper .cards.block ul > li:not(:first-child):not(:has(a)) {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 20px;
+  color: #f3f6ff;
+  font-size: 18px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .cards-wrapper .cards.block {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .cards-wrapper .cards.block ul > li:first-child {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .cards-wrapper .cards.block ul li a,
+  .cards-wrapper .cards.block ul > li:not(:first-child):not(:has(a)) {
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 16px;
+  }
 }
